@@ -8,7 +8,6 @@
 
  Tipo abstrato de dados que representa um choice set.
  Inicialmente os objetos de fluxo serão representados como strings.
-
 '''
 
 '''
@@ -28,8 +27,7 @@
     of: objeto de fluxo
     cs: choiceset (uma coleção de objetos de fluxo)
     gs: groupset (uma coleção de choicesets)
-    gst: groupset table (uma coleção de groupsets)
-    
+    gst: groupset table (uma coleção de groupsets)    
 '''
 def create_cs(lst_str_ofs):
     return lst_str_ofs
