@@ -16,6 +16,7 @@ def main():
 
     print(cs.contains(var_cs_A, var_cs_B))
     print(cs.equals(var_cs_B, var_cs_C))
+    print(cs.equals(var_cs_A, var_cs_C))
 
     print(cs.to_string(var_cs_A))
     print(cs.to_string(var_cs_B))
