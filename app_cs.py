@@ -12,8 +12,10 @@ def main():
 
     var_cs_A = cs.create_str(str_val_cs)
     var_cs_B = cs.create_str("B, C")
+    var_cs_C = cs.create_str("B, C")
 
     print(cs.contains(var_cs_A, var_cs_B))
+    print(cs.equals(var_cs_B, var_cs_C))
 
     print(cs.to_string(var_cs_A))
     print(cs.to_string(var_cs_B))
