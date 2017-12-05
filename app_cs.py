@@ -1,5 +1,5 @@
 #-*- coding: utf-8 -*-
-import tadchoiceset
+import tadchoiceset as cs
 
 '''
   Aplicação que testa o tad choiceset e explora os conceitos de choiceset e objetos de fluxo (ofs).
@@ -8,14 +8,17 @@ import tadchoiceset
   Ernani & Mateus
 '''
 def main():
-    dados_cs = ["A", "B", "C"]
+    str_val_cs = "A, B, C, D"
 
-    var_cs = tadchoiceset.create_cs(dados_cs)
+    var_cs_A = cs.create_str(str_val_cs)
+    var_cs_B = cs.create_str("B, C")
 
-    print(tadchoiceset.to_string(var_cs))
+    print(cs.contains(var_cs_A, var_cs_B))
+
+    print(cs.to_string(var_cs_A))
+    print(cs.to_string(var_cs_B))
 
     return 0
 # fim main
 
 main()
-
