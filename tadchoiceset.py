@@ -9,6 +9,7 @@
  Tipo abstrato de dados que representa um choice set.
  Um choiceset é uma coleção de objetos de fluxo, of.
  Inicialmente os objetos de fluxo serão representados como strings.
+ etc..
 '''
 
 '''
