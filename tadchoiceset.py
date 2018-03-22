@@ -7,6 +7,7 @@
  .Ernani & Mateus
 
  Tipo abstrato de dados que representa um choice set.
+ Um choiceset é uma coleção de objetos de fluxo, of.
  Inicialmente os objetos de fluxo serão representados como strings.
 '''
 
@@ -18,10 +19,8 @@
  Entrada: Uma lista de strings representando objetos de fluxo.
  Saida: uma lista de strings representando um choiceset.
  
- Obs: revisões posteriores poderão redefinr o formato interno de um choceset
- para outra estrutura de dados diferente de listas. Contudo, a estrutura do
- parâmetro de entrada deverá permanecer, pelo menos enquanto o desenvolvimento
- mantiver seu caráter exploratório.
+ Obs: revisões posteriores poderão redefinr o formato interno de um choiceset
+ para uma estrutura de dados diferente de listas.
  
  Glossário:
     of: objeto de fluxo
@@ -30,6 +29,10 @@
     gst: groupset table (uma coleção de groupsets)    
 '''
 def create(lst_str_ofs):
+    #
+    # Futuramente aqui haverá a lógica que mapeará a lista de strings para
+    # a uma lista de objetosde fluxo.
+    #
     return lst_str_ofs
 ## create_cs
 
@@ -160,6 +163,6 @@ def get_of_by_id(tad_cs, str_id):
 def to_string(tad_cs):
     saida = ""
     for of in tad_cs:
-        saida = saida +", " + of
+        saida = saida + ", " + of
     return saida[2:]
 ## to_string

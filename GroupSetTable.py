@@ -4,7 +4,7 @@ Tad GroupSetStack
 Operações:
    Create
     Entrada: nil
-    póscondicao: objeto do tipo GroupSetStack é craido e configurado.
+    póscondicao: objeto do tipo GroupSetStack é criado e configurado.
     Retorno: Referência para um tipo GroupSetStack novo, vazio
 
    InsertGroupSet
