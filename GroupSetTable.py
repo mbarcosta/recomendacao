@@ -4,7 +4,7 @@ Tad GroupSetStack
 Operações:
    Create
     Entrada: nil
-    póscondicao: objeto do tipo GroupSetStack é criado e configurado.
+    pós-condicao: objeto do tipo GroupSetStack é criado e configurado.
     Retorno: Referência para um tipo GroupSetStack novo, vazio
 
    InsertGroupSet
@@ -14,3 +14,8 @@ Operações:
        Remove o grouSet mais externo ( do topo da GroupSetStack)
 
 '''
+
+def create():
+
+    return []
+

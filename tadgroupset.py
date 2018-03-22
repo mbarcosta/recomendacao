@@ -65,7 +65,6 @@ def isoperand(tad_gs, tad_cs):
 
 '''
   Verifica se o groupset é um membro do choiceset.
-  Fui quase feliz hoje.
 '''
 def gs_in_cs(tad_gs, tad_cs):
     cs_esq = get_left(tad_gs)
