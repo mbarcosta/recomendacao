@@ -64,7 +64,7 @@ def isoperand(tad_gs, tad_cs):
 ## contido_cs
 
 '''
-
+  Verifica se o groupset é um membro do choiceset.
 '''
 def gs_in_cs(tad_gs, tad_cs):
     cs_esq = get_left(tad_gs)
