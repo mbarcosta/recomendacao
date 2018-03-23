@@ -8,17 +8,12 @@
 
  Tipo abstrato de dados que representa um group set.
  Um groupset é uma coleção de choicesets.
+ 
+ IMPORTANTE:
+   Python 3.5 (casa) não aceita sobrecarga de métodos fora do modo O.O.
 '''
 
 import tadchoiceset as cs
-
-'''
- Entradas: ladoesq, ladodir: argumentos do tipo tad choiceset, operador: string 
- Saida: um tad groupset   
-'''
-def create(ladoesq, operador, ladodir):
-    return [ladoesq, operador, ladodir]
-## create
 
 '''
  Entradas: string choiceset, string operador, string choiceset. 
@@ -34,7 +29,7 @@ def create(str_lst_ofs_lado_equerdo, operador, str_lst_ofs_lado_direito):
  str_expressao_gs: 
       string contendo uma expressão groupset do tipo <choice set> <operador> <choiceset>.
 '''
-def create(str_expressao_gs):
+def create_exp(str_expressao_gs):
     '''
       Fazer um parsing do argumento de entrada e extrair uma expressão do tipo
       tadchoiceset (operando esquerdo) <operador> tadchoiceset (operando direito)
