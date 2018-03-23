@@ -28,6 +28,7 @@ def create(str_lst_ofs_lado_equerdo, operador, str_lst_ofs_lado_direito):
 '''
  str_expressao_gs: 
       string contendo uma expressão groupset do tipo <choice set> <operador> <choiceset>.
+      Protótipo, por enquanto.
 '''
 def create_exp(str_expressao_gs):
     '''
