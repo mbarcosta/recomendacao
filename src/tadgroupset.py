@@ -11,56 +11,97 @@
  
  IMPORTANTE:
    Python 3.5 (casa) não aceita sobrecarga de métodos fora do modo O.O.
+   
+   GitHub: https://github.com/mbarcosta/recomendacao
 '''
 
 import tadchoiceset as cs
 
 '''
- Entradas: string choiceset, string operador, string choiceset. 
- Saida: um tad groupset   
+  Constrói um tad groupset a partir dos componentes (operandos e operadores) de uma expressão
+  de criação de um groupset.
+  
+  Entradas: 
+   str_lst_ofs_lado_equerdo: string representando uma lista de objetos de fluxo usado como operando
+   esquerdo da expressão definidora do groupset.
+   str_lst_ofs_lado_direito: string representando uma lista de objetos de fluxo usado como operando
+   direito da expressão definidora do groupset.
+  Saida: 
+   um tad groupset. 
 '''
 def create(str_lst_ofs_lado_equerdo, operador, str_lst_ofs_lado_direito):
     cs_esquerdo = cs.create_str(str_lst_ofs_lado_equerdo)
     cs_direito = cs.create_str(str_lst_ofs_lado_direito)
-    return create(cs_esquerdo, operador, cs_direito)
+    return [cs_esquerdo, operador, cs_direito]
 ## create
 
 '''
- str_expressao_gs: 
-      string contendo uma expressão groupset do tipo <choice set> <operador> <choiceset>.
-      Protótipo, por enquanto.
+  Constrói um tad groupset a partir de uma string contendo uma expressão de criação
+  de um groupset. Faz o parsing da string e usa os elementos para uma chamada ao
+  ao constructor 'create' acima.  
+  Entrada:
+   str_expressao_gs: string contendo uma expressão de definição de groupset.
+   A expressão tenha a forma <choice set> <operador> <choiceset>.
+  Saida: 
+   um tad groupset.
 '''
 def create_exp(str_expressao_gs):
-    '''
-      Fazer um parsing do argumento de entrada e extrair uma expressão do tipo
-      tadchoiceset (operando esquerdo) <operador> tadchoiceset (operando direito)
-    '''
-    return None
+    vet = str_expressao_gs.split()
+    return create(vet[0], vet[1], vet[2])
 ## create_str
 
+'''
+  Retorna o operando esquerdo do tad groupset.
+  Entrada:
+   Um tad groupset qualquer.
+  Saída:
+   Um tad choiceset que faz o papel de operando esquerdo do groupset argumento de entrada.
+'''
 def get_left(tad_gs):
     return tad_gs[0]
 # get_left
 
+'''
+  Retorna o operando direito do tad groupset.
+  Entrada:
+   Um tad groupset qualquer.
+  Saída:
+   Um tad choiceset que faz o papel de operando direito do groupset argumento de entrada.
+'''
 def get_right(tad_gs):
     return tad_gs[2]
 # get_right
 
+'''
+  Retorna o operandor do tad groupset.
+  Entrada:
+   Um tad groupset qualquer.
+  Saída:
+   Uma string caracterizando o operador da expressão do groupset argumento de entrada.
+'''
 def get_op(tad_gs):
     return tad_gs[1]
 # get_op
 
 '''
- Verifica se um determinado choice é um dos operandos de um groupset.
- 
- Entradas: o groupset  
+ Verifica se um determinado choiceset é um dos operandos de um groupset. 
+ Entradas: 
+  tad_gs, o groupset de interesse, tad_cs, o choiceset que pode ou não de um dos operandos
+  de tad_gs.
+ Saida:
+  True, se tad_cs é um dos operandos de tad_gs, False caso contrário.  
 '''
 def isoperand(tad_gs, tad_cs):
     return cs.equals(tad_cs, get_left(tad_gs)) or cs.equals(tad_cs, get_left(tad_gs))
 ## contido_cs
 
 '''
-  Verifica se o groupset é um membro do choiceset.
+  Verifica se um determinado groupset é um dos membros do choiceset.
+  Entradas: 
+   tad_cs, o choiceset de interesse, tad_gs, o groupset que pode ou não de um dos operandos
+   de tad_cs.
+ Saida:
+  True, se tad_gs é um dos operandos de tad_cs, False caso contrário.    
 '''
 def gs_in_cs(tad_gs, tad_cs):
     cs_esq = get_left(tad_gs)

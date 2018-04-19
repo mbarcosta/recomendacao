@@ -5,6 +5,7 @@
  Versão 1.0
  28/12/2017
  .Ernani & Mateus
+  GitHub: https://github.com/mbarcosta/recomendacao 
 
  Tipo abstrato de dados que representa um choice set.
  Um choiceset é uma coleção de objetos de fluxo, of.
@@ -32,7 +33,7 @@
 def create(lst_str_ofs):
     #
     # Futuramente aqui haverá a lógica que mapeará a lista de strings para
-    # a uma lista de objetosde fluxo.
+    # uma lista de objetos de fluxo.
     #
     return lst_str_ofs
 ## create_cs
