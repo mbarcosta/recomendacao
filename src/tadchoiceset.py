@@ -3,7 +3,7 @@
 '''
  TAD Choice set
  Versão 1.0
- 28/12/2017
+ Última alteração: 28/12/2017
  .Ernani & Mateus
   GitHub: https://github.com/mbarcosta/recomendacao 
 

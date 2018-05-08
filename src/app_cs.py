@@ -3,7 +3,7 @@ import tadchoiceset as cs
 
 '''
   Aplicação que testa o tad choiceset e explora os conceitos de choiceset e objetos de fluxo (ofs).
-  28/11/2017
+  Última alteração: 28/11/2017
   v1.0
   Ernani & Mateus
 '''

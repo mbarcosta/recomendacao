@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 '''
  TAD Situacao
  Versão 1.0
@@ -9,3 +8,4 @@
  Tipo abstrato de dados que representa um group set.
  Um groupset é uma coleção de choicesets.
 '''
+
