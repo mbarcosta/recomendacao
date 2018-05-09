@@ -2,7 +2,7 @@ import tadgroupset as gs
 import tadchoiceset as cs
 
 def main():
-    expr_gs_a = "ABCD ou EFG"
+    expr_gs_a = "ABCD or EFG"
     expr_gs_b = "EFG xor HIJ"
     
     var_gs_A = gs.create_exp(expr_gs_a)
