@@ -90,7 +90,7 @@ def isoperand(tad_gs, tad_cs):
 ## contido_cs
 
 '''
-  Verifica se um determinado groupset é um dos membros do choiceset.
+  Verifica se um determinado groupset é um dos membros do choice set.
   
   Entradas: tad_cs, o choiceset de interesse, tad_gs, o groupset que pode ou não de um dos operandos de tad_cs.
   Saida: True, se tad_gs é um dos operandos de tad_cs, False caso contrário.    
