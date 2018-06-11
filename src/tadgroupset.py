@@ -49,6 +49,14 @@ def create_exp(str_expressao_gs):
     return create(vet[0], vet[1], vet[2])
 ## create_str
 
+def add_cs_container(gs, cs):
+    if len(gs) == 3:
+        gs.append(cs)
+        return gs
+    else:
+        return None
+# add_cs_container
+
 '''
   Retorna o operando esquerdo do tad groupset.
   

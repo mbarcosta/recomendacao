@@ -12,6 +12,7 @@
  Inicialmente os objetos de fluxo serão representados como strings.
  etc..
 '''
+from posix import lstat
 
 '''
  Define e retorna a estrutura de dados que representa um choice set, cs.
@@ -46,11 +47,22 @@ def create(lst_str_ofs):
   Saída: uma lista 
 '''
 def create_str(str_ofs):
-    lst = str_ofs.split(",")
+    lst = str_ofs.split(",")    
     for i in range(len(lst)):
         lst[i] = lst[i].strip()
+        
+    tup = tuple(lst)
+    lst.append(tup)
     return lst
 # create_str
+
+def add_contained_gs(cs, gs):
+    if len(cs) == 1:
+        cs.append([gs])
+    else:
+        cs[1].append(gs)
+    return cs
+# add_contained_gs
 
 '''
   Adiciona uma lista de novos objetos de fluxo ao conteúdo do tad_cs.
