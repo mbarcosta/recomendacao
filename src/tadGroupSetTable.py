@@ -36,10 +36,10 @@ def create():
 '''
 def addGS(tadGSTab, gs):
     if tadGSTab == []:
-        tadGSTab.apend([gs])
+        tadGSTab.append([gs])
     else:
         for indexNivel, nivel in enumerate(tadGSTab):
-            for elemGS in enumerate(nivel):
+            for elemGS in nivel:
                 # Verificando a inserção:
                 # a) verifica-se se o group set a ser inserido, gs, está
                 #    interiramente contido em um choice set de algum group set
@@ -74,13 +74,16 @@ def addGS(tadGSTab, gs):
     return tadGSTab
 # addGS
 
-def printTabGS(tadGSTab):
+def printTabGS(tadGSTab):    
     for i, nivel in enumerate(tadGSTab):
-        print("Nivel:", i, end="")
-        for elemGS in nivel:
-            print(elemGS, ",", end="")
+        print("Nivel:", i, " [",end="")
+        for i in range(len(nivel)-1):
+            print(nivel[i], ",", end="")
+        print(nivel[i], end="")
         # for j..
-        print("-" * 50)
+        print("]", end="")
+        print()
+        print("-" * 90)
     # for i..    
 # printTabGS
 
@@ -104,6 +107,7 @@ def removeGS(tadGSTab, gs):
          Caso o gs não exista, retorna o group set table inalterado.
 '''
 def findGS(tadGSTab, idGS):
+    # EM OBRAS
     return None
 
 

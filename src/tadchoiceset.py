@@ -51,8 +51,8 @@ def create_str(str_ofs):
     for i in range(len(lst)):
         lst[i] = lst[i].strip()
         
-    tup = tuple(lst)
-    lst.append(tup)
+#     tup = tuple(lst)
+#     lst.append(tup)
     return lst
 # create_str
 

@@ -31,7 +31,7 @@ import tadchoiceset as cs
 def create(str_lst_ofs_lado_equerdo, operador, str_lst_ofs_lado_direito):
     cs_esquerdo = cs.create_str(str_lst_ofs_lado_equerdo)
     cs_direito = cs.create_str(str_lst_ofs_lado_direito)
-    return [cs_esquerdo, operador, cs_direito]
+    return [0, cs_esquerdo, operador, cs_direito]
 ## create
 
 '''
@@ -49,9 +49,10 @@ def create_exp(str_expressao_gs):
     return create(vet[0], vet[1], vet[2])
 ## create_str
 
+
 def add_cs_container(gs, cs):
     if len(gs) == 3:
-        gs.append(cs)
+        gs[0] = cs
         return gs
     else:
         return None
@@ -64,7 +65,7 @@ def add_cs_container(gs, cs):
   Saída: Um tad choiceset que faz o papel de operando esquerdo do groupset argumento de entrada.
 '''
 def get_left(tad_gs):
-    return tad_gs[0]
+    return tad_gs[1]
 # get_left
 
 '''
@@ -74,7 +75,7 @@ def get_left(tad_gs):
   Saída: Um tad choiceset que faz o papel de operando direito do groupset argumento de entrada.
 '''
 def get_right(tad_gs):
-    return tad_gs[2]
+    return tad_gs[3]
 # get_right
 
 '''
@@ -84,7 +85,7 @@ def get_right(tad_gs):
   Saída: Uma string caracterizando o operador da expressão do groupset argumento de entrada.
 '''
 def get_op(tad_gs):
-    return tad_gs[1]
+    return tad_gs[2]
 # get_op
 
 '''
