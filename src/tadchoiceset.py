@@ -36,7 +36,7 @@ def create(lst_str_ofs):
     # Futuramente aqui haverá a lógica que mapeará a lista de strings para
     # uma lista de objetos de fluxo.
     #
-    return lst_str_ofs
+    return [lst_str_ofs, 0]
 ## create_cs
 
 '''
@@ -50,17 +50,12 @@ def create_str(str_ofs):
     lst = str_ofs.split(",")    
     for i in range(len(lst)):
         lst[i] = lst[i].strip()
-        
-#     tup = tuple(lst)
-#     lst.append(tup)
-    return lst
+
+    return [lst, 0]
 # create_str
 
 def add_contained_gs(cs, gs):
-    if len(cs) == 1:
-        cs.append([gs])
-    else:
-        cs[1].append(gs)
+    cs[1] = gs
     return cs
 # add_contained_gs
 
@@ -70,7 +65,9 @@ def add_contained_gs(cs, gs):
   Saida: o tad choiceset atualizado com os novos objetos de fluxo.
 '''
 def add_of(tad_cs, plst_ofs):
-    return tad_cs + plst_ofs
+    for of in plst_ofs:
+        tad_cs[0].append(of)        
+    return tad_cs
 ## add_of
 
 '''
@@ -80,8 +77,8 @@ def add_of(tad_cs, plst_ofs):
 '''
 def remove(tad_cs, plst_ofs):
     for of in plst_ofs:
-        if of in tad_cs:
-            tad_cs.remove(of)
+        if of in tad_cs[0]:
+            tad_cs[0].remove(of)
     return tad_cs
 ## remove_of
 
@@ -91,19 +88,19 @@ def remove(tad_cs, plst_ofs):
   Saída: o choiceset atualiza com o novo objeto de fluxo.
 '''
 def append(tad_cs, str_of):
-    tad_cs.append(str_of)
+    tad_cs[0].append(str_of)
     return tad_cs
 ## append
 
 '''
-  Testa se um choiceset está contém um outro choiceset.
+  Testa se um choiceset contém um outro choiceset.
   Entrada: choiceset que poderá conter um segundo choiceset,
            choiceset que poderá estar contido no primeiro choiceset.
   Saida: True se o primeiro choiceset contiver o segundo choiceset, False caso contrário.
 '''
 def contains(tad_cs_A, tad_cs_B):
-    for of in tad_cs_B:
-        if of not in tad_cs_A:
+    for of in tad_cs_B[0]:
+        if of not in tad_cs_A[0]:
             return False
     return True
 ## contido_cs
@@ -113,8 +110,9 @@ def contains(tad_cs_A, tad_cs_B):
   Entrada: dois choicesets que terão seus conteúdos comparados.
   Saida: True se os conteúdos dos choicesets forem idênticos, False caso contrário.
 '''
-def equals(tad_cs_A, tad_cs_B):
-    return (len(tad_cs_A) == len(tad_cs_B)) and contains(tad_cs_A, tad_cs_B)
+def equals(tad_cs_A, tad_cs_B): 
+    #return (len(tad_cs_A) == len(tad_cs_B)) and contains(tad_cs_A, tad_cs_B)
+    return tad_cs_A == tad_cs_B
 ## igual_cs
 
 '''
@@ -123,7 +121,7 @@ def equals(tad_cs_A, tad_cs_B):
   Saida: True se o objeto de fluxo é um membro do choiceset, False caso contrário.
 '''
 def in_cs(tad_cs, pof):
-    return pof in tad_cs
+    return pof in tad_cs[0]
 ## in_cs
 
 '''
@@ -131,7 +129,7 @@ def in_cs(tad_cs, pof):
   Entrada: um choiceset.
 '''
 def size(tad_cs):
-    return len(tad_cs)
+    return len(tad_cs[0])
 ## size_cs
 
 '''
@@ -140,7 +138,7 @@ def size(tad_cs):
   Saída: True se o choice não possui nenhum objeto de fluxo (of), False caso contrário.
 '''
 def isempty(tad_cs):
-    return size(tad_cs) == 0
+    return size(tad_cs[0]) == 0
 # isempty
 
 '''
@@ -151,7 +149,7 @@ def isempty(tad_cs):
 '''
 def get_of_by_ndx(tad_cs, index):
     if index in range(len(tad_cs)):
-        return tad_cs[index]
+        return tad_cs[0][index]
     else:
         return None
 ## get_of
@@ -163,8 +161,8 @@ def get_of_by_ndx(tad_cs, index):
          caso nenhum dos objetos de fluxo do choiceset possua o id procurado.
 '''
 def get_of_by_id(tad_cs, str_id):
-    if str_id in tad_cs:
-        return tad_cs[tad_cs.index(str_id)]
+    if str_id in range(len(tad_cs[0])):
+        return tad_cs[tad_cs[0][str_id]]
     else:
         return None
 ## get_of
@@ -176,7 +174,8 @@ def get_of_by_id(tad_cs, str_id):
 '''
 def to_string(tad_cs):
     saida = ""
-    for of in tad_cs:
-        saida = saida + ", " + of
-    return saida[2:]
+    for indx_of in range(len(tad_cs[0])-1):
+        saida = saida + tad_cs[indx_of] + ","
+    saida = saida + tad_cs[-1]
+    return saida
 ## to_string

@@ -13,9 +13,11 @@ def main():
     gs_F = gs.create_exp("t8 xor t9,t10")
     gs_G = gs.create_exp("t9 or t10")
 
-    gstable = gst.addGS(gstable, gs_B)
-    gstable = gst.addGS(gstable, gs_A)
+    gstable = gst.addGS(gstable, gs_A)     
+    
     gstable = gst.addGS(gstable, gs_C)
+    gstable = gst.addGS(gstable, gs_B)
+    
     #     gstable = gst.addGS(gstable, gs_D)
     #     gstable = gst.addGS(gstable, gs_E)
     #     gstable = gst.addGS(gstable, gs_F)

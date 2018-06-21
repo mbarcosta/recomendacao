@@ -75,16 +75,20 @@ def addGS(tadGSTab, gs):
 # addGS
 
 def printTabGS(tadGSTab):    
-    for i, nivel in enumerate(tadGSTab):
-        print("Nivel:", i, " [",end="")
-        for i in range(len(nivel)-1):
-            print(nivel[i], ",", end="")
-        print(nivel[i], end="")
-        # for j..
-        print("]", end="")
-        print()
-        print("-" * 90)
-    # for i..    
+    #-------------------------------------- for i, nivel in enumerate(tadGSTab):
+        #--------------------------------------- print("Nivel:", i, " [",end="")
+        #----------------------------------------- for j in range(len(nivel)-1):
+            #--------------------- print(tadgs.to_string(nivel[j]), ",", end="")
+        #----------------------------- print(tadgs.to_string(nivel[-1]), end="")
+        #------------------------------------------------------------- # for j..
+        #---------------------------------------------------- print("]", end="")
+        #--------------------------------------------------------------- print()
+        #------------------------------------------------------- print("-" * 90)
+    #----------------------------------------------------------------- # for i..
+    print(len(tadGSTab), "níveis")
+    for l in range(len(tadGSTab)):
+        print("Nivel",l," --> ",tadGSTab[l])
+    print(tadGSTab)
 # printTabGS
 
 '''
