@@ -12,4 +12,5 @@ Um estado do modelo pode conter zero ou mais pontos de recomendação. Um ponto 
     - groupSetTable: gst - Gerada a partir da operação getChoiceRelationsGroup do ProcessSpecification do estado que contém o ponto de recomendação
     - Parent Recommendation point é um ponteiro para o ponto de recomendação anterior que o  gerou
     - NextRecommendationPOints[] - Vetor apontando para o próximo pontos de recomendação gerados a partir de uma recomendação tomada a partir do ponto de recomendação em questão.
+    bla bla bla
 """
