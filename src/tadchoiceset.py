@@ -12,7 +12,7 @@
  Inicialmente os objetos de fluxo serão representados como strings.
  etc..
 '''
-from posix import lstat
+#from posix import lstat
 
 '''
  Define e retorna a estrutura de dados que representa um choice set, cs.
